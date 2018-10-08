@@ -9,16 +9,22 @@ package com.yf.btphonesdk.config;
 
 public interface Config {
 
+
     interface ModuleKey {
-        int KEY_KEY_BOARD = 0;
-        int KEY_RECORD = 1;
-        int KEY_CONTACTS = 2;
-        int KEY_OFTEN = 3;
-        int KEY_SETTING = 4;
+        /**
+         * 各个模块的Key值
+         */
+        int KEY_KEY_BOARD = 0;//拨号键盘
+        int KEY_RECORD = 1;//通话记录
+        int KEY_CONTACTS = 2;//联系人
+        int KEY_OFTEN = 3;//常用联系人
+        int KEY_SETTING = 4;//蓝牙设置
     }
 
-    interface Action
-    {
-        String ACTION_SERVICE="com.yf.bluetooth.action.REMOTE_BIND";
+    /**
+     * 远程服务的Action
+     */
+    interface Action {
+        String ACTION_SERVICE = "com.yf.bluetooth.action.REMOTE_BIND";
     }
 }
