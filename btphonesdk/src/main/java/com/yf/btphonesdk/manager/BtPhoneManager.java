@@ -65,6 +65,12 @@ public class BtPhoneManager implements ServiceConnection, IBinder.DeathRecipient
         return instance;
     }
 
+
+    /**
+     * 绑定服务成功回调
+     * @param name
+     * @param service
+     */
     @Override
     public void onServiceConnected(ComponentName name, IBinder service) {
         btPhoneController = BtPhoneController.Stub.asInterface(service);
@@ -77,11 +83,20 @@ public class BtPhoneManager implements ServiceConnection, IBinder.DeathRecipient
         }
     }
 
+
+    /**
+     * 绑定异常断开回调
+     * @param name
+     */
     @Override
     public void onServiceDisconnected(ComponentName name) {
 
     }
 
+
+    /**
+     * 绑定异常死亡断开回调
+     */
     @Override
     public void binderDied() {
         btPhoneController.asBinder().unlinkToDeath(this, 0);
